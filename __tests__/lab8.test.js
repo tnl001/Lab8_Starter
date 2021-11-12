@@ -41,7 +41,7 @@ describe('Basic user flow for Website', () => {
     for (let i = 0; i < prodItems.length; i++) {
       data = await prodItems[i].getProperty('data');
       plainValue = await data.jsonValue();
-      console.log(`Checking product item ${i+1}/${prodItems.length}`);
+      // console.log(`Checking product item ${i+1}/${prodItems.length}`);
 
       if (plainValue.title.length == 0) { allArePopulated = false; }
       if (plainValue.price.length == 0) { allArePopulated = false; }
@@ -64,7 +64,7 @@ describe('Basic user flow for Website', () => {
     let button = await shadowRoot.$("button"); // grab the shadowRoot's button
     await button.click();
     let text = await button.getProperty("innerHTML");
-    console.log("expected: Remove from Cart ----- result: ", text["_remoteObject"].value);
+    // console.log("expected: Remove from Cart ----- result: ", text["_remoteObject"].value);
     expect(text["_remoteObject"].value).toBe("Remove from Cart");
     await button.click(); // reset click
   }, 2500);
@@ -127,7 +127,7 @@ describe('Basic user flow for Website', () => {
     });
     
     for (let i = 1; i <= 20; i++) {
-      console.log(`expected: ${i} ----- result: ${data[i-1]}`);
+      // console.log(`expected: ${i} ----- result: ${data[i-1]}`);
       expect(data[i-1]).toBe(i);
     }
   });
@@ -150,7 +150,7 @@ describe('Basic user flow for Website', () => {
     }
 
     count = await cardCount.getProperty("innerHTML");
-    console.log(`expected: ${0} ----- result: ${count["_remoteObject"].value}`);
+    // console.log(`expected: ${0} ----- result: ${count["_remoteObject"].value}`);
     expect(count["_remoteObject"].value).toBe("0");
   }, 10000);
 
@@ -176,7 +176,7 @@ describe('Basic user flow for Website', () => {
     }
 
     count = await cardCount.getProperty("innerHTML");
-    console.log(`expected: ${0} ----- result: ${count["_remoteObject"].value}`);
+    // console.log(`expected: ${0} ----- result: ${count["_remoteObject"].value}`);
     expect(count["_remoteObject"].value).toBe("0");
   }, 10000);
 
@@ -192,8 +192,8 @@ describe('Basic user flow for Website', () => {
       storage = window.localStorage;
       return JSON.parse(storage.getItem("cart"));
     })
-    console.log(`expected: ${0} ----- result: ${data.length}`);
-    console.log(`expected: ${"[]"} ----- result: ${data}`);
+    // console.log(`expected: ${0} ----- result: ${data.length}`);
+    // console.log(`expected: ${"[]"} ----- result: ${data}`);
     expect(data.length).toBe(0);
     expect(data).toEqual(empty);
   });

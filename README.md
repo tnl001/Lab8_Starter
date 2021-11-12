@@ -7,3 +7,9 @@ I would fit my automated tests within a Github action that runs whenever code is
 
 # 2)
 No
+
+# 3)
+No. Because the message feature involve a lot of other things and not just one standalone feature (eg. We would need to also think about if the sent message is received by the other user(s), etc.)
+
+# 4)
+Yes. Because we can just evaluate the state of the textbox when the max length is reached. For example, we can test to see if the textbox is read-only when the message's length reach a certain number.
