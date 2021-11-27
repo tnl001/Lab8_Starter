@@ -18,7 +18,8 @@
     "puppeteer": "^11.0.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "jest": {
     "preset": "jest-puppeteer",
